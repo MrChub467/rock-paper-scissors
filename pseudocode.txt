@@ -3,3 +3,9 @@ Computer choice function:
   Takes that number and using makes it a number between 0 and 2
   Converts that number into either rock paper or scissors
   returns rock paper or scissors
+
+Player choice function:
+  Function prompts the Player
+  The player types in either rock paper of scissors
+  Checks to make sure that the player enters one of those three
+  Needs to lowercase the input
