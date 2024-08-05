@@ -16,20 +16,20 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-  let keepGoing = true;
   let playerChoice;
   
   playerChoice = prompt("Please enter rock(r), paper(p), or scissors(s)");
 
-  while(keepGoing) {
+  while(true) {
     playerChoice = playerChoice.trim().toLowerCase();
     if (playerChoice === "rock" ||
         playerChoice === "r" ||
         playerChoice === "paper" ||
         playerChoice === "p" ||
         playerChoice === "scissors" ||
-        playerChoice === "s") {
-          keepGoing = false
+        playerChoice === "s"
+        ) {
+          break;
         }
     else {
       playerChoice = prompt("Invalid input. Please enter rock(r), paper(p), or scissors(s)");
