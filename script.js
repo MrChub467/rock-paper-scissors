@@ -45,43 +45,42 @@ function getPlayerChoice() {
 function playRound(playerChoice, computerChoice) {
   let winner;
   if (playerChoice === computerChoice) {winner = "tie"}
-  else if (playerChoice === "rock" && computerChoice === "scissors") {winner = "player"}
-  else if (playerChoice === "paper" && computerChoice === "rock") {winner = "player"}
-  else if (playerChoice === "scissors" && computerChoice === "paper") {winner = "player"}
-  else if (playerChoice === "paper" && computerChoice === "scissors") {winner = "computer"}
-  else if (playerChoice === "scissors" && computerChoice === "rock") {winner = "computer"}
-  else if (playerChoice === "rock" && computerChoice === "paper") {winner = "computer"}
-
+  else if ((playerChoice === "rock" && computerChoice === "scissors") || 
+          (playerChoice === "paper" && computerChoice === "rock") ||
+          (playerChoice === "scissors" && computerChoice === "paper")) {
+            winner = "player"
+          }  
+  else {winner = "computer"}
+   
   if (winner === "tie") {
-    console.log(`You tie; ${playerChoice} equals ${computerChoice}.`)
+    alert(`You tie; ${playerChoice} equals ${computerChoice}.`)
   } else if (winner === "player") {
-    console.log(`You win; ${playerChoice} beats ${computerChoice}.`)
+    alert(`You win; ${playerChoice} beats ${computerChoice}.`)
     playerScore++;
   } else {
-    console.log(`You lose; ${computerChoice} beats ${playerChoice}.`)
+    alert(`You lose; ${computerChoice} beats ${playerChoice}.`)
     computerScore++;
   }
-  
-  
+  return winner; 
 }
 
 function playGame() {
-  
+  let again;
   for (let i = 0; i < 5; ++i) {
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    again = playRound(playerSelection, computerSelection);
+    if (again === "tie") {
+      i--;
+    }
   }
-  
   if (playerScore > computerScore) {
-    console.log(`You beat the computer ${playerScore} to ${computerScore}. Congratualations!`)
+    alert(`You beat the computer ${playerScore} to ${computerScore}. Congratualations!`)
   } else {
-    console.log(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
+    alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
   }
 }
 
 let playerScore = 0, 
     computerScore = 0;
 playGame();
-
-
