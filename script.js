@@ -65,9 +65,23 @@ function playRound(playerChoice, computerChoice) {
   
 }
 
-let playerScore, computerScore = 0;
+function playGame() {
+  
+  for (let i = 0; i < 5; ++i) {
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+  }
+  
+  if (playerScore > computerScore) {
+    console.log(`You beat the computer ${playerScore} to ${computerScore}. Congratualations!`)
+  } else {
+    console.log(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
+  }
+}
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
+let playerScore = 0, 
+    computerScore = 0;
+playGame();
 
-playRound(playerSelection, computerSelection);
+
