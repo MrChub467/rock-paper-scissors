@@ -75,7 +75,7 @@ function playGame() {
     }
   }
   if (playerScore > computerScore) {
-    alert(`You beat the computer ${playerScore} to ${computerScore}. Congratualations!`)
+    alert(`You beat the computer ${playerScore} to ${computerScore}. Congratulations!`)
   } else {
     alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
   }
