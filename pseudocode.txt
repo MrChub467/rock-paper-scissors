@@ -9,3 +9,9 @@ Player choice function:
   The player types in either rock paper of scissors
   Checks to make sure that the player enters one of those three
   Needs to lowercase the input
+
+Play a single round function
+  Has two arguments: playerChoice and computerChoice
+  Plays a single round
+  If computer has rock and player has paper then player wins etc...
+  Output who won and what the choices of each were
