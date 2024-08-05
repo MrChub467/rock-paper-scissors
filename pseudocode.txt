@@ -1,0 +1,5 @@
+Computer choice function:
+  Function picks a random number using Math.random
+  Takes that number and using makes it a number between 0 and 2
+  Converts that number into either rock paper or scissors
+  returns rock paper or scissors
