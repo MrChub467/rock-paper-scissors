@@ -15,3 +15,9 @@ Play a single round function
   Plays a single round
   If computer has rock and player has paper then player wins etc...
   Output who won and what the choices of each were
+
+Play a whole game function
+  Has playRound function and the score variables
+  and the getChoice functions
+  Needs to be able to play five rounds and then
+  output who won and the scores
