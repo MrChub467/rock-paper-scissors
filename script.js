@@ -66,15 +66,19 @@ function playRound(playerChoice, computerChoice) {
     text = `You lose; ${computerChoice} beats ${playerChoice}.`
     computerScore++;
   }
-  let roundMessage = document.querySelector('.round-text')
+  
   roundMessage.textContent = text;
 
-  document.querySelector('.computer-score').textContent = "Computer Score: " + computerScore;
-  document.querySelector('.player-score').textContent = "Player Score: " + playerScore;
+  computer.textContent = "Computer Score: " + computerScore;
+  player.textContent = "Player Score: " + playerScore;
+}
 
-
-
-  return winner; 
+function checkForWinner() {
+  if (playerScore === 5) {
+    roundMessage.textContent = `You beat the computer ${playerScore} to ${computerScore}. Congratulations!`
+  } else if (computerScore === 5) {
+    roundMessage.textContent = `The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`
+  }
 }
 
 // function playGame() {
@@ -87,22 +91,33 @@ function playRound(playerChoice, computerChoice) {
 //       i--;
 //     }
 //   }
-//   if (playerScore > computerScore) {
-//     alert(`You beat the computer ${playerScore} to ${computerScore}. Congratulations!`)
-//   } else {
-//     alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
+  // if (playerScore > computerScore) {
+  //   alert(`You beat the computer ${playerScore} to ${computerScore}. Congratulations!`)
+  // } else {
+  //   alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
 //   }
 // }
 
 let playerScore = 0, 
     computerScore = 0;
+    roundMessage = document.querySelector('.round-text')
+    computer = document.querySelector('.computer-score');
+    player = document.querySelector('.player-score');
 //playGame();
 
-let buttons = document.querySelectorAll("button").forEach(button => 
+
+let rockButton = document.querySelector('.rock'),
+    paperButton = document.querySelector('.paper'),
+    scissorsButton = document.querySelector('.scissors')
+let buttons = [rockButton, paperButton, scissorsButton];
+buttons.forEach (button => 
   button.addEventListener("click", () => {
     playRound(button.className, getComputerChoice());
+    checkForWinner();
   })
 );
+
+
 
 
 
