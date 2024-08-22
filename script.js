@@ -64,23 +64,23 @@ function playRound(playerChoice, computerChoice) {
   return winner; 
 }
 
-function playGame() {
-  let again;
-  for (let i = 0; i < 5; ++i) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    again = playRound(playerSelection, computerSelection);
-    if (again === "tie") {
-      i--;
-    }
-  }
-  if (playerScore > computerScore) {
-    alert(`You beat the computer ${playerScore} to ${computerScore}. Congratulations!`)
-  } else {
-    alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
-  }
-}
+// function playGame() {
+//   let again;
+//   for (let i = 0; i < 5; ++i) {
+//     const playerSelection = getPlayerChoice();
+//     const computerSelection = getComputerChoice();
+//     again = playRound(playerSelection, computerSelection);
+//     if (again === "tie") {
+//       i--;
+//     }
+//   }
+//   if (playerScore > computerScore) {
+//     alert(`You beat the computer ${playerScore} to ${computerScore}. Congratulations!`)
+//   } else {
+//     alert(`The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`)
+//   }
+// }
 
 let playerScore = 0, 
     computerScore = 0;
-playGame();
+//playGame();
