@@ -71,3 +71,4 @@ buttons.forEach (button =>
     checkForWinner();
   })
 );
+
