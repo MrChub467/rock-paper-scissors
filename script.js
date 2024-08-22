@@ -43,7 +43,8 @@ function getPlayerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-  let winner;
+  let winner,
+      text;
   if (playerChoice === computerChoice) {winner = "tie"}
   else if ((playerChoice === "rock" && computerChoice === "scissors") || 
           (playerChoice === "paper" && computerChoice === "rock") ||
@@ -51,16 +52,28 @@ function playRound(playerChoice, computerChoice) {
             winner = "player"
           }  
   else {winner = "computer"}
-   
+
+  
   if (winner === "tie") {
-    alert(`You tie; ${playerChoice} equals ${computerChoice}.`)
+    // alert(`You tie; ${playerChoice} equals ${computerChoice}.`)
+    text = `You tie; ${playerChoice} equals ${computerChoice}.`
   } else if (winner === "player") {
-    alert(`You win; ${playerChoice} beats ${computerChoice}.`)
+    // alert(`You win; ${playerChoice} beats ${computerChoice}.`)
+    text = `You win; ${playerChoice} beats ${computerChoice}.`
     playerScore++;
   } else {
-    alert(`You lose; ${computerChoice} beats ${playerChoice}.`)
+    // alert(`You lose; ${computerChoice} beats ${playerChoice}.`)
+    text = `You lose; ${computerChoice} beats ${playerChoice}.`
     computerScore++;
   }
+  let roundMessage = document.querySelector('.round-text')
+  roundMessage.textContent = text;
+
+  document.querySelector('.computer-score').textContent = "Computer Score: " + computerScore;
+  document.querySelector('.player-score').textContent = "Player Score: " + playerScore;
+
+
+
   return winner; 
 }
 
