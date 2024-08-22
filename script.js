@@ -28,14 +28,11 @@ function playRound(playerChoice, computerChoice) {
 
   
   if (winner === "tie") {
-    // alert(`You tie; ${playerChoice} equals ${computerChoice}.`)
     text = `You tie; ${playerChoice} equals ${computerChoice}.`
   } else if (winner === "player") {
-    // alert(`You win; ${playerChoice} beats ${computerChoice}.`)
     text = `You win; ${playerChoice} beats ${computerChoice}.`
     playerScore++;
   } else {
-    // alert(`You lose; ${computerChoice} beats ${playerChoice}.`)
     text = `You lose; ${computerChoice} beats ${playerChoice}.`
     computerScore++;
   }
@@ -46,12 +43,24 @@ function playRound(playerChoice, computerChoice) {
   player.textContent = "Player Score: " + playerScore;
 }
 
+function playAgain() {
+  playerScore = 0;
+  computerScore = 0;
+
+
+  
+}
+
 function checkForWinner() {
+  let winner = false;
   if (playerScore === 5) {
     roundMessage.textContent = `You beat the computer ${playerScore} to ${computerScore}. Congratulations!`
+    winner = true;
   } else if (computerScore === 5) {
     roundMessage.textContent = `The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`
+    winner = true;
   }
+  if (winner) playAgain();
 }
 
 let playerScore = 0, 
@@ -61,9 +70,9 @@ let playerScore = 0,
     player = document.querySelector('.player-score');
 
 
-let rockButton = document.querySelector('.rock'),
-    paperButton = document.querySelector('.paper'),
-    scissorsButton = document.querySelector('.scissors')
+let rockButton = document.querySelector('.rock')
+let paperButton = document.querySelector('.paper')
+let scissorsButton = document.querySelector('.scissors')
 let buttons = [rockButton, paperButton, scissorsButton];
 buttons.forEach (button => 
   button.addEventListener("click", () => {
@@ -71,4 +80,9 @@ buttons.forEach (button =>
     checkForWinner();
   })
 );
+
+
+
+
+
 
