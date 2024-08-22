@@ -15,33 +15,6 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getPlayerChoice() {
-  let playerChoice;
-  
-  playerChoice = prompt("Please enter rock(r), paper(p), or scissors(s)");
-
-  while(true) {
-    playerChoice = playerChoice.trim().toLowerCase();
-    if (playerChoice === "rock" ||
-        playerChoice === "r" ||
-        playerChoice === "paper" ||
-        playerChoice === "p" ||
-        playerChoice === "scissors" ||
-        playerChoice === "s"
-        ) {
-          break;
-        }
-    else {
-      playerChoice = prompt("Invalid input. Please enter rock(r), paper(p), or scissors(s)");
-    }    
-  }
-  if (playerChoice === "r") {playerChoice = "rock"}
-  else if (playerChoice === "p") {playerChoice = "paper"}
-  else if (playerChoice === "s") {playerChoice = "scissors"}
-
-  return playerChoice;
-}
-
 function playRound(playerChoice, computerChoice) {
   let winner,
       text;
@@ -86,7 +59,6 @@ let playerScore = 0,
     roundMessage = document.querySelector('.round-text')
     computer = document.querySelector('.computer-score');
     player = document.querySelector('.player-score');
-//playGame();
 
 
 let rockButton = document.querySelector('.rock'),
