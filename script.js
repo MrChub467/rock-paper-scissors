@@ -85,12 +85,11 @@ let playerScore = 0,
     computerScore = 0;
 //playGame();
 
-let buttons = document.querySelectorAll("button").forEach((button) => 
+let buttons = document.querySelectorAll("button").forEach(button => 
   button.addEventListener("click", () => {
     playRound(button.className, getComputerChoice());
   })
 );
 
-// let rockButton = document.querySelector(".rock");
-// rockButton.addEventListener('click', () => console.log('Hello'));
+
 
