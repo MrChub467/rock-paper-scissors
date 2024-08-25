@@ -54,10 +54,10 @@ function playAgain() {
 function checkForWinner() {
   let winner = false;
   if (playerScore === 5) {
-    roundMessage.textContent = `You beat the computer ${playerScore} to ${computerScore}. Congratulations!`
+    roundMessage.innerHTML = `You beat the computer ${playerScore} to ${computerScore}. Congratulations!` + '<br>' + 'Click a choice to play again.'
     winner = true;
   } else if (computerScore === 5) {
-    roundMessage.textContent = `The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(`
+    roundMessage.innerHTML = `The computer beat you ${computerScore} to ${playerScore}. Better luck next time :(` + '<br>' + 'Click a choice to play again.'
     winner = true;
   }
   if (winner) playAgain();

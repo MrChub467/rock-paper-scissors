@@ -8,21 +8,34 @@
   
 </head>
 <body>
-  <div class="container">
-    <div class="choices">
-      <div class="rock-choice">
-        <button class="rock">Rock</button>
+  <div class="container"> 
+    <div class="game-container">
+      <div class="choices center-flex">
+        <div class="choice">
+          <button class="rock"><img src="./images/rock.png" alt="rock clipart"></button>
+        </div>
+        <div class="choice">
+          <button class="paper"><img src="./images/paper.png" alt="paper clipart"></button>
+        </div>
+        <div class="choice">
+          <button class="scissors"><img src="./images/scissors.png" alt="scissors clipart"></button>
+        </div>
       </div>
-      <div class="paper-choice">
-        <button class="paper">Paper</button>
+      <div class="round-info center-flex">
+        <div class="round-text"></div>
       </div>
-      <div class="scissors-choice">
-        <button class="scissors">Scissors</button>
+      <div class="scores center-flex">
+        <div class="player-score score-text"></div>
+        <div class="computer-score score-text"></div>
       </div>
     </div>
-    <div class="round-text"></div>
-    <div class="player-score"></div>
-    <div class="computer-score"></div>
+    
+      <div class="attributions">
+        <div class="at"><a href="https://www.vecteezy.com/free-png/rock">Rock PNGs by Vecteezy</a></div>
+        <div class="at"><a href="https://www.vecteezy.com/free-png/paper">Paper PNGs by Vecteezy</a></div>
+        <div class="at"><a href="https://www.vecteezy.com/free-png/scissors">Scissors PNGs by Vecteezy</a></div>
+      </div>
+    
   </div>
   <script src="script.js"></script>
 </body>
